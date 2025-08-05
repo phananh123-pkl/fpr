@@ -1,7 +1,6 @@
 import streamlit as st
 from pathlib import Path
 from cv_bot import graph, extract_pdf_text
-from langchain_core.messages import AIMessage
 
 st.set_page_config(page_title="Le Phan Anh", layout="wide")
 st.title("Le Phan Anh feedback CV")

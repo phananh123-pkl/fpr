@@ -100,8 +100,6 @@ def cont_2(state: CVState):
     else:
         return 'stop'
     
-from IPython.display import Image, display
-from langgraph.graph import StateGraph
 
 builder=StateGraph(CVState)
     
@@ -119,13 +117,3 @@ builder.add_conditional_edges('MakeDecision', cont,{'qna': 'QNA', END:END})
 builder.add_conditional_edges('QNA', cont_2,{'continue': 'QNA', 'stop': END} )
 builder.add_edge('QNA', END)
 graph=builder.compile()
-
-def run_graph(file_path: str, user_query: str = "", ask_more: bool = False):
-    inputs = {
-        "file_path": file_path,
-        "user_query": user_query,
-        "already_ask": False,
-        "ask_more": ask_more,
-    }
-    result = graph.invoke(inputs)
-    return result
