@@ -1,0 +1,8 @@
+streamlit
+pymupdf
+langgraph
+langchain
+langchain-community
+langchain-core 
+langchain-deepseek
+langgraph.graph
